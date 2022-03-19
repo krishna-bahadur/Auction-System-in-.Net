@@ -1,0 +1,87 @@
+﻿@model AuctionSystem.Web.ViewModels.AuctionDetailViewModel
+<div class="row align-items-center details">
+    <div class="col-md-6">
+        @* @if (Model.Auction.AuctionPictures != null && Model.Auction.AuctionPictures.Count > 0)
+        {
+            var i = 0;
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    @foreach (var pic in Model.Auction.AuctionPictures)
+                    {
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" aria-label="Slide 3"></button>
+                        i++;
+                    }
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+                </div>
+                <div class="carousel-inner rounded-2 mt-2">
+                    @foreach (var AuctionPic in Model.Auction.AuctionPictures)
+                    {
+                        var picUrl = "~/Content/images/" + AuctionPic.Picture.URL;
+                        <div class="carousel-item @(i == 1 ? "active" : "") "">
+                            <img src="@picUrl" class="d-block w-100" alt="...">
+                        </div>
+                    }
+
+                    <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        }*@
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner rounded-2 mt-2">
+
+                @{int i = 0;}
+
+                @foreach (var item in Model.Auction.AuctionPictures)
+                        {
+                            i++;
+
+                    <div class="carousel-item @(i == 1 ? "active" : "")">
+                        <img src="~/Content/images/@item.Picture.URL" class="d-block w-100" alt="@item.Picture.Id">
+                    </div>
+                    
+                }
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6 px-4">
+        <h1 class="displayfw-bolder">@Model.Auction.Title</h1>
+        <div class="fs-5 ">
+            <span>Rs @Model.Auction.ActualAmount</span>
+        </div>
+        <p class="lead">@Model.Auction.Description</p>
+        <div class="d-flex">
+            
+        </div>
+    </div>
+</div>
+

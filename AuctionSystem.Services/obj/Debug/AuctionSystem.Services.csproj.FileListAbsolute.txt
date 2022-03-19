@@ -1,0 +1,17 @@
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Services.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Services.pdb
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\obj\Debug\AuctionSystem.Services.csproj.CoreCompileInputs.cache
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\obj\Debug\AuctionSystem.Services.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\obj\Debug\AuctionSystem.Services.pdb
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Services.dll.config
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Data.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Entities.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\EntityFramework.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Data.pdb
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Data.dll.config
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\AuctionSystem.Entities.pdb
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\EntityFramework.xml
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\obj\Debug\AuctionSystem.Services.csproj.AssemblyReference.cache
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Services\obj\Debug\AuctionSystem.Services.csproj.CopyComplete

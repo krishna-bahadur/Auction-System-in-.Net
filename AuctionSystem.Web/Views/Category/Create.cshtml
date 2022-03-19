@@ -1,0 +1,39 @@
+﻿@model AuctionSystem.Web.ViewModels.CategoryViewModel
+<div class="modal-header">
+    <h5 class="modal-title">Create Category</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form class="form" method="post" id="formAuction">
+    <div class="modal-body">
+        <div class="row no-gutters mb-3">
+            <label class="form-label px-0 fw-bold">Name</label>
+            <input type="text" name="Name" class="form-control" required />
+        </div>
+        <div class="row mb-3">
+            <label class="form-label px-0 fw-bold">Description</label>
+            <input type="text" name="Description" class="form-control" required />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <input id="saveAuction" type="button" name="submit" value="Add" class="btn btn-primary" />
+    </div>
+
+</form>
+
+<script>
+    $("#saveAuction").click(function () {
+        $.ajax({
+            url: "/Category/Create/",
+            method: "post",
+            data: $("#formAuction").serialize()
+        })
+            .done(function (response) {
+                $('#formModal').modal('toggle');
+                $("#listDisplay").html(response);
+            });
+
+    });
+
+
+</script>

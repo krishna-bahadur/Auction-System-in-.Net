@@ -1,0 +1,6 @@
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\bin\Debug\AuctionSystem.Entities.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\bin\Debug\AuctionSystem.Entities.pdb
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\obj\Debug\AuctionSystem.Entities.csproj.AssemblyReference.cache
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\obj\Debug\AuctionSystem.Entities.csproj.CoreCompileInputs.cache
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\obj\Debug\AuctionSystem.Entities.dll
+E:\AuctionSystem\AuctionSystem\AuctionSystem.Entities\obj\Debug\AuctionSystem.Entities.pdb

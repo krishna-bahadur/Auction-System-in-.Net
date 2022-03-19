@@ -1,0 +1,91 @@
+﻿@model AuctionSystem.Web.ViewModels.AuctionsViewModel
+<div id="carouselExampleIndicators" class="carousel slide container-fluid p-0" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner rounded-2 mt-2">
+        <div class="carousel-item active">
+            <img src="~/Content/images/one.png" class="d-block w-100" alt="..." />
+
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Capture-52.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/images/Auction-770x285.jpg" class="d-block w-100" alt="..."/>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="row my-3 categories py-2 px-2 align-items-center">
+    <div class="col-md-6 col-sm-12 ">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle mybtn">
+                More Categories :
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">one</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 ">
+        <form class="form mt-1" method="post">
+            <div class="input-group row ">
+                <input type="text" class="form-control" name="search" placeholder="Search">
+                <span class="input-group-text" id="basic-addon1"><input type="submit" name="name" value="" class="fa fa-search" /></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div class="row no-gutters mt-3">
+    @foreach (var auction in Model.PromotedAuction)
+    {
+        var picUrl = auction.AuctionPictures != null && auction.AuctionPictures.Count > 0 ? auction.AuctionPictures.First().Picture.URL : "https://dummyimage.com/600x700/dee2e6/6c757d.jpg";
+    <div class="col-md-3 mt-3">
+        <div class="card mx-2">
+            <img src="~/Content/images/@picUrl" class="card-img-top" alt="...">
+            <a href="@Url.Action("Details","Auction", new { ID = auction.Id})" class="text-decoration-none">
+                <div class="card-body">
+                    <h4 class="card-title">@auction.Title</h4>
+                    <h5 class=" text-dark ">Rs @auction.ActualAmount</h5>
+                    <p class="card-text  text-dark ">@auction.Description</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    }
+</div>*@
+<div class="row no-gutters mt-3">
+    @foreach (var auction in Model.AllAuctions)
+    {
+        var picUrl = auction.AuctionPictures != null && auction.AuctionPictures.Count > 0 ? auction.AuctionPictures.First().Picture.URL : "https://dummyimage.com/600x700/dee2e6/6c757d.jpg";
+
+        <div class="col-md-3 mt-3">
+            <div class="card mx-2">
+                <img src="~/Content/images/@picUrl" class="card-img-top" alt="...">
+                <a href="@Url.Action("Details","Auction", new { ID = auction.Id})" class="text-decoration-none">
+                    <div class="card-body">
+                        <h4 class="card-title">@auction.Title</h4>
+                        <h5 class=" text-dark ">Rs @auction.ActualAmount</h5>
+                        <p class="card-text  text-dark ">@auction.Description</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+

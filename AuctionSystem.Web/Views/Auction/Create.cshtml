@@ -1,0 +1,92 @@
+﻿@model AuctionSystem.Web.ViewModels.CreateAuctionViewModel
+<div class="modal-header">
+    <h5 class="modal-title">Create Auction</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form class="form" method="post" action="Create" id="formAuction">
+    <div class="modal-body">
+        <div class="row no-gutters mb-3">
+            <label class="form-label px-0 fw-bold">Title</label>
+            <input type="text" name="Title" class="form-control" required/>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label px-0 fw-bold">ActualAmount</label>
+            <input type="text" name="ActualAmount" class="form-control" required/>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label px-0 fw-bold">Select Images</label>
+            <input type="file" id="AuctionPictures" name="Auction-Images" class="form-control" multiple required />
+        </div>
+        <div id="picturesArea" class="upload_image"></div>
+        <input type="hidden" name="AuctionPictures" id="PictureIds" />
+        <div class="row mb-3">
+            <label class="form-label px-0 fw-bold">Description</label>
+            <input type="text" name="Description" class="form-control" required />
+        </div>
+        <div class="row mb-3">
+            <label class="form-label px-0 fw-bold">Category</label>
+            <select class="form-select" name="CategoryId" >
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+        </div>
+        <div class=" row mb-3">
+            <label class="form-label px-0 fw-bold">StartingTime</label>
+            <input type="text" name="StartingTime" class="form-control" required />
+        </div>
+        <div class=" row mb-3">
+            <label class="form-label px-0 fw-bold">EndingTime</label>
+            <input type="text" name="EndingTime" class="form-control" required/>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <input id="saveAuction" type="button" name="submit" value="Add" class="btn btn-primary" />
+    </div>
+    
+</form>
+
+<script>
+    $("#saveAuction").click(function () {
+        var imageIds = [];
+        $("#picturesArea .Image").each(function () {
+            var imageId = $(this).attr("data-id");
+            imageIds.push(imageId);
+        });
+        $("#PictureIds").val(imageIds.join());
+        $.ajax({
+            url: "@Url.Action("Create","Auction")",
+            method: "post",
+            data: $("#formAuction").serialize()
+        })
+            .done(function (response) {
+                $('#formModal').modal('toggle');
+                $("#listDisplay").html(response);
+            });
+    });
+    $("#AuctionPictures").change(function () {
+        var pictures = this.files;
+        var picsData = new FormData();
+        for (var i = 0; i < pictures.length; i++) {
+            picsData.append("Picture", pictures[i])
+        }
+        $.ajax({
+            url: "@Url.Action("UploadPictures", "Shared")",
+            type: "post",
+            data: picsData,
+            dataType: "json",
+            processData: false,
+            contentType: false
+        })
+            .done(function (responses) {
+                for (var i = 0; i < responses.length; i++) {
+                    var picResponse = responses[i];
+                    AttachedNewImage(picResponse.pictureUrl, picResponse.Id)
+                }
+            })
+    });
+  
+  
+</script>
